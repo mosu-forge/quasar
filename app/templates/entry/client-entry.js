@@ -66,8 +66,10 @@ import FastClick from 'fastclick'
 <% } %>
 
 <% if (ctx.mode.electron) { %>
+<% if (electron.hasOwnProperty('injectElectronToRender') && electron.injectElectronToRender === true) { %>
 import electron from 'electron'
 Vue.prototype.$q.electron = electron
+<% } %>
 <% } %>
 
 <% if (ctx.dev) { %>
